@@ -1,83 +1,120 @@
-# AdminPanel
+# 🛡️ Admin Panel — Passport.js Authentication
 
-A Bootstrap-based Admin Panel converted from static HTML into a dynamic Node.js application using EJS templating and Express.js.
+A secure and responsive Admin Panel built with **Node.js**, **Express**, and **MongoDB**,
+featuring **Passport.js** session-based authentication and full admin user management.
 
-## ✨ Features
+---
 
-* Converted static HTML Bootstrap template to EJS
-* Node.js + Express server setup
-* Reusable layout components (header, footer, sidebar)
-* Organized public assets (CSS, JS, images)
-* Multiple routes using Express
-* Clean and scalable folder structure
+## 🚀 Features
+
+- 🔐 Session-based Login / Logout with **Passport.js**
+- 🔑 Password hashing with **Bcrypt**
+- 📋 Full **CRUD** — Add, View, Edit, Delete Admins
+- 🖼️ Avatar/Image upload with **Multer**
+- 🛡️ Protected routes via Passport Auth Middleware
+- 🎨 Responsive UI with **Purple Admin** template
+- ⚡ Server-side rendering with **EJS**
+
+---
 
 ## 🛠️ Tech Stack
 
-* Node.js
-* Express.js
-* EJS
-* Bootstrap
+| Layer        | Technology                        |
+|--------------|-----------------------------------|
+| Runtime      | Node.js                           |
+| Framework    | Express.js                        |
+| Database     | MongoDB + Mongoose                |
+| Auth         | Passport.js + Express-Session     |
+| Password     | Bcrypt                            |
+| File Upload  | Multer                            |
+| View Engine  | EJS                               |
+| Styling      | CSS / SCSS                        |
 
-## 📂 Folder Structure
+---
 
-```
-AdminPanel/
-│── views/        # EJS templates
-│── public/       # CSS, JS, assets
-│── app.js        # Main server file
-│── package.json
-```
+## 📁 Project Structure
 
-## 🚀 Getting Started
+AdminPanelPassportJs/
+│
+├── config/           # MongoDB connection + Passport config
+├── controllers/      # Business logic (auth + admin CRUD)
+├── middleware/       # Passport authentication middleware
+├── models/           # Mongoose Admin schema + Multer config
+├── public/           # Static files (CSS, JS, images, avatars)
+├── routes/           # Express route definitions
+├── views/            # EJS templates (login, register, dashboard)
+└── app.js            # Application entry point
 
-1. Clone the repository
+---
 
-```
-git clone https://github.com/devanshimarvania/AdminPanel.git
-```
+## ⚙️ Getting Started
 
-2. Install dependencies
+### Prerequisites
+- Node.js installed
+- MongoDB running locally
 
-```
+### Installation
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/devanshimarvania/AdminPanelPassportJs.git
+
+# 2. Navigate into the project
+cd AdminPanelPassportJs
+
+# 3. Install dependencies
 npm install
-```
 
-3. Run the server
-
-```
+# 4. Start the server
 node app.js
 ```
 
-4. Open in browser
+### 🌐 Visit the app
 
-```
-http://localhost:8000
-```
+http://localhost:9000
 
-## 🎯 Purpose
+---
 
-This project demonstrates how to convert a static Bootstrap admin dashboard into a server-side rendered application using Node.js and EJS.
+## 📸 Pages
 
-## 📌 Author
+| Page         | Route              |
+|--------------|--------------------|
+| Login        | `/login`           |
+| Register     | `/register`        |
+| Dashboard    | `/`                |
+| Add Admin    | `/addAdmin`        |
+| View Admins  | `/viewAdmin`       |
+| Edit Admin   | `/editAdmin/:id`   |
+| Delete Admin | `/deleteAdmin/:id` |
 
-Devanshi Marvania
+---
 
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/6d6f141e-1dc7-412c-922e-0341168ca0de" />
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/a52b53f4-6107-45ea-bd76-dce7c4d476da" />
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/bf9a1d9b-3a51-4e45-a9e4-20e1cb51cfb0" />
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/bb88c215-55fb-4fe0-b7f0-79adb4645d81" />
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d7a0389f-9b78-4856-84cc-383c00b452ab" />
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/f9d58642-3f30-4abb-9d56-7abc11c1e8ad" />
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ec6b773f-2792-48e5-bd43-91518334c38f" />
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/6b17b332-0f91-4bf3-8d91-776af8c7df49" />
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/7f4ca433-0602-4370-8955-b27b189d6d22" />
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/07a987c2-5dd3-45b3-9c31-a7a3571f9db2" />
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/815aaf7a-926e-4e8e-b2f1-fb493c196c0f" />
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/43071fde-59f1-4904-8e8c-c0ac1e98c50f" />
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ab038ea1-d254-4cc9-ac2c-31e996d90245" />
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/6988f041-d89c-478c-8a66-4ec1baf84986" />
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/afa5f8f3-5812-44a7-b88b-160fb5a8c104" />
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/31fd8617-f774-41d4-8339-39aa92ac08a6" />
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/bb180f78-44e6-408d-8d90-c8de891f77d1" />
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/7f49f777-bbfb-46e5-a2be-d624be94ddc6" />
+## 🔐 Auth Comparison
 
+| Feature             | Cookie Auth        | Passport.js Auth        |
+|---------------------|--------------------|--------------------------|
+| Strategy            | Manual cookie check| passport-local strategy  |
+| Session handling    | cookie-parser      | express-session          |
+| Scalability         | Basic              | Flexible & extensible    |
+| Multiple strategies | ❌                 | ✅ (Google, JWT, etc.)   |
+
+---
+
+## 👩‍💻 Author
+
+**Devanshi Marvania**  
+[GitHub](https://github.com/devanshimarvania)
+
+---
+
+⭐ Star this repo if you found it helpful!
+
+
+<img width="1920" height="1080" alt="Screenshot 2026-05-11 151902" src="https://github.com/user-attachments/assets/feadc8ef-0317-4dcf-88f8-359577c3b78e" />
+<img width="1920" height="1080" alt="Screenshot 2026-05-11 151919" src="https://github.com/user-attachments/assets/cdf4d42a-d0a1-458e-b8b7-96660070ebaf" />
+<img width="1920" height="1080" alt="Screenshot 2026-05-11 153546" src="https://github.com/user-attachments/assets/cc0daca1-63d9-470f-a7e4-0f206a1c15d5" />
+<img width="1920" height="1080" alt="Screenshot 2026-05-11 153605" src="https://github.com/user-attachments/assets/9c84b6bf-4960-4166-bdcc-14a2663ea717" />
+<img width="1920" height="1080" alt="Screenshot 2026-05-11 153625" src="https://github.com/user-attachments/assets/d47ddfce-e329-41e0-8b0c-86a605cdfca2" />
+<img width="1920" height="1080" alt="Screenshot 2026-05-11 153709" src="https://github.com/user-attachments/assets/115eb14f-298c-40fe-b81a-c4bab51f6c68" />
+<img width="1920" height="1080" alt="Screenshot 2026-05-11 153742" src="https://github.com/user-attachments/assets/7a3e6b9f-ff0e-40d8-bab2-adf8fdf51678" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/5834186e-ae8a-4b2a-9b3e-bab7fa3272a4" />
