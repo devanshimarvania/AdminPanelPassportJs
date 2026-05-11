@@ -1,0 +1,93 @@
+<%- include('header') %>
+    <div class="main-panel">
+        <div class="content-wrapper">
+            <div class="page-header">
+                <h3 class="page-title"> Add Admin </h3>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Admin</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Add Admin</li>
+                    </ol>
+                </nav>
+            </div>
+            <div class="row ">
+                <div class="col-md-7 grid-margin stretch-card">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Default form</h4>
+                            <p class="card-description"> Basic form layout </p>
+                            <form action="/insertAdmin" method="post" enctype="multipart/form-data" class="forms-sample" >
+                                <div class="form-group">
+                                    <label for="fname">First Name</label>
+                                    <input type="text" class="form-control" name="fname" placeholder="First Name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="lname">Last Name</label>
+                                    <input type="text" class="form-control" name="lname" placeholder="Last Name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email address</label>
+                                    <input type="email" class="form-control" name="email" placeholder="Email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="pwd">Password</label>
+                                    <input type="password" class="form-control" name="pwd" placeholder="Password">
+                                </div>
+                                <div class="form-group">
+                                    <label for="gender">Gender</label>
+                                    <select class="form-select" name="gender">
+                                        <!-- <option>Select City</option> -->
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="dob">Date of Birth</label>
+                                    <input type="date" class="form-control" name="dob" placeholder="Password">
+                                </div>
+                                <div class="form-group">
+                                    <label for="role">Role</label>
+                                    <select class="form-select" name="role">
+                                        <!-- <option>Select City</option> -->
+                                        <option value="HR">HR</option>
+                                        <option value="IT">IT</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="city">City</label>
+                                    <select class="form-select" name="city">
+                                        <!-- <option>Select City</option> -->
+                                        <option value="surat">Surat</option>
+                                        <option value="rajkot">Rajkot</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>File upload</label>
+                                    <input type="file" name="avtar" class="file-upload-default">
+                                    <div class="input-group col-xs-12">
+                                        <input type="text" class="form-control file-upload-info" disabled
+                                            placeholder="Upload Image">
+                                        <span class="input-group-append">
+                                            <button class="file-upload-browse btn btn-gradient-primary py-3"
+                                                type="button">Upload</button>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="form-check form-check-flat form-check-primary">
+                                    <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input"> Remember me </label>
+                                </div>
+                                <button type="submit" class="btn btn-gradient-primary me-2">Submit</button>
+                                <button class="btn btn-light">Cancel</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <%- include('footer') %>
+
+        <script src="/assets/js/file-upload.js"></script>
+        <script src="/assets/js/typeahead.js"></script>
+        <script src="/assets/js/select2.js"></script>

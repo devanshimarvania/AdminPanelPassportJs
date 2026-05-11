@@ -1,0 +1,136 @@
+<%- include('header') %>
+    <div class="main-panel">
+        <div class="content-wrapper">
+            <div class="page-header">
+                <h3 class="page-title"> View Admin </h3>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Admin</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">View Admin</li>
+                    </ol>
+                </nav>
+            </div>
+            <div class="row">
+                <!-- <div class="col-lg-12 grid-margin stretch-card">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Basic Table</h4>
+                            <p class="card-description"> Add class <code>.table</code>
+                            </p>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Profile</th>
+                                        <th>VatNo.</th>
+                                        <th>Created</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Jacob</td>
+                                        <td>53275531</td>
+                                        <td>12 May 2017</td>
+                                        <td><label class="badge badge-danger">Pending</label></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Messsy</td>
+                                        <td>53275532</td>
+                                        <td>15 May 2017</td>
+                                        <td><label class="badge badge-warning">In progress</label></td>
+                                    </tr>
+                                    <tr>
+                                        <td>John</td>
+                                        <td>53275533</td>
+                                        <td>14 May 2017</td>
+                                        <td><label class="badge badge-info">Fixed</label></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Peter</td>
+                                        <td>53275534</td>
+                                        <td>16 May 2017</td>
+                                        <td><label class="badge badge-success">Completed</label></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dave</td>
+                                        <td>53275535</td>
+                                        <td>20 May 2017</td>
+                                        <td><label class="badge badge-warning">In progress</label></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="col-lg-12 grid-margin stretch-card">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Admins</h4>
+                            <% if(admins.length> 0){ %>
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th> Sr. No </th>
+                                            <th> Profile </th>
+                                            <th> Name </th>
+                                            <th> Email </th>
+                                            <th> Gender </th>
+                                            <th> DOB </th>
+                                            <th> Role </th>
+                                            <th> City </th>
+                                            <th> Action </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% admins.map((admin, i)=> { %>
+                                            <tr>
+                                                <td>
+                                                    <%= i+1 %>
+                                                </td>
+                                                <td>
+                                                    <img src="<%= admin.avtar %>" width="100">
+                                                </td>
+                                                <td>
+                                                    <%= admin.name %>
+                                                </td>
+                                                <td>
+                                                    <%= admin.email %>
+                                                </td>
+                                                <td>
+                                                    <%= admin.gender %>
+                                                </td>
+                                                <td>
+                                                    <%= admin.dob %>
+                                                </td>
+                                                <td>
+                                                    <%= admin.role %>
+                                                </td>
+                                                <td>
+                                                    <%= admin.city %>
+                                                </td>
+                                                <td>
+                                                    <a href="/deleteAdmin/<%= admin._id %>"
+                                                        class="btn btn-danger">Delete</a>
+                                                    <!-- <br> -->
+                                                    <a href="/editAdmin/<%= admin._id %>"
+                                                        class="btn btn-warning">Edit</a>
+                                                </td>
+                                            </tr>
+                                            <% }) %>
+
+                                    </tbody>
+                                </table>
+                            <% } else { %>
+                                <div class="text-center mt-5 noAdmin">
+                                    <h4 class="mb-4">No Admin added yet.</h4>
+                                    <a href="/addAdmin" class="mt-5">Add one now!</p>
+                                </div>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- content-wrapper ends -->
+
+        <%- include('footer') %>

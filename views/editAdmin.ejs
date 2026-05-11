@@ -1,0 +1,90 @@
+<%- include('header') %>
+    <div class="main-panel">
+        <div class="content-wrapper">
+            <div class="page-header">
+                <h3 class="page-title"> Edit Admin </h3>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Admin</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Edit Admin</li>
+                    </ol>
+                </nav>
+            </div>
+            <div class="row ">
+                <div class="col-md-7 grid-margin stretch-card">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Default form</h4>
+                            <p class="card-description"> Basic form layout </p>
+                            <form action="/updateAdmin/<%= admin._id %>" method="post" enctype="multipart/form-data"
+                                class="forms-sample">
+                                <div class="form-group">
+                                    <label for="fname">First Name</label>
+                                    <input type="text" class="form-control" name="fname" placeholder="First Name"
+                                        value="<%= admin.name ? admin.name.split(' ')[0] : '' %>">
+                                </div>
+                                <div class="form-group">
+                                    <label for="lname">Last Name</label>
+                                    <input type="text" class="form-control" name="lname" placeholder="Last Name"
+                                        value="<%= admin.name ? admin.name.split(' ')[1] : '' %>">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email address</label>
+                                    <input type="email" class="form-control" name="email" placeholder="Email"
+                                        value="<%= admin.email %>">
+                                </div>
+                                <div class="form-group">
+                                    <label for="gender">Gender</label>
+                                    <select class="form-select" name="gender">
+                                        <option value="Male" <%=admin.gender==='Male' ? 'selected' : '' %>>Male</option>
+                                        <option value="Female" <%=admin.gender==='Female' ? 'selected' : '' %>>Female
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="dob">Date of Birth</label>
+                                    <input type="date" class="form-control" name="dob" value="<%= admin.dob %>">
+                                </div>
+                                <div class="form-group">
+                                    <label for="role">Role</label>
+                                    <select class="form-select" name="role">
+                                        <option value="HR" <%=admin.role==='HR' ? 'selected' : '' %>>HR</option>
+                                        <option value="IT" <%=admin.role==='IT' ? 'selected' : '' %>>IT</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="city">City</label>
+                                    <select class="form-select" name="city">
+                                        <option value="surat" <%=admin.city==='surat' ? 'selected' : '' %>>Surat
+                                        </option>
+                                        <option value="rajkot" <%=admin.city==='rajkot' ? 'selected' : '' %>>Rajkot
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Upload Avatar</label>
+
+                                    <!-- show old image -->
+                                    <% if (admin.avtar) { %>
+                                        <div class="mb-2">
+                                            <img src="<%= admin.avtar %>" width="60" height="60"
+                                                style="border-radius:50%; object-fit:cover;">
+                                        </div>
+                                        <% } %>
+
+                                            <!-- file input -->
+                                            <input type="file" name="avtar" class="form-control">
+                                </div>
+                                <button type="submit" class="btn btn-gradient-primary me-2">Update</button>
+                                <button class="btn btn-light">Cancel</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <%- include('footer') %>
+
+        
